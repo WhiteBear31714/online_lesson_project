@@ -1,0 +1,124 @@
+/* === ฟอนต์ใหม่และโทนสีสำหรับเด็ก === */
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@300;500;700&display=swap');
+
+body {
+    font-family: 'Mali', sans-serif;
+    background: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    }
+
+    /* === Navbar ปรับให้ดูสะอาดตา === */
+    .navbar {
+    background-color: #ffffff;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #5a67d8;
+    line-height: 1.2;
+    }
+
+    .sub-logo {
+    font-size: 0.75rem;
+    color: #a0aec0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    }
+
+    .profile-icon {
+    font-size: 1.6rem;
+    }
+
+    /* === Hero Section === */
+    .hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+    gap: 2rem;
+    }
+
+    .hero-text {
+    flex: 1 1 45%;
+    }
+
+    .hero-text h1 {
+    font-size: 2.5rem;
+    color: #2b2d42;
+    margin-bottom: 0.5rem;
+    }
+
+    .hero-text h2 {
+    font-size: 1.3rem;
+    color: #5a67d8;
+    margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 2rem;
+    }
+
+    button, .btn-primary {
+    background-color: #5a67d8;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-decoration: none;
+    }
+
+    button:hover, .btn-primary:hover {
+    background-color: #434190;
+    }
+
+    .hero-image {
+    flex: 1 1 45%;
+    text-align: center;
+    }
+
+    .hero-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    /* === Responsive สำหรับมือถือ === */
+    @media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.1rem;
+    }
+
+    .btn-primary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.95rem;
+    }
+}

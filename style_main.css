@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@300;500;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mali', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #2d6cdf;
+    line-height: 1.2;
+}
+
+.sub-logo {
+    font-size: 0.75rem;
+    color: #a0aec0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-icon {
+    font-size: 1.5rem;
+}
+
+button {
+    padding: 0.6rem 1.5rem;
+    background-color: #4ec3e9;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3ab2d6;
+}
+
+.video_section {
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.video_section img {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #2d6cdf;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    color: #4a90e2;
+    margin-bottom: 10px;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.box {
+    flex: 1;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.box h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.box ul {
+    padding-left: 20px;
+}
+
+.box li {
+    margin-bottom: 5px;
+}
+
+.img_B {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.img_B img {
+    max-width: 200px;
+    border-radius: 10px;
+}
+
+.but {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.main-wrapper {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.content-group h2 {
+    font-size: 20px;
+    color: #2d6cdf;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.content-group h2 i {
+    margin-right: 10px;
+}
+
+.item-card {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.item-card h3 {
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.item-card h3 i {
+    margin-right: 10px;
+    color: #9bbbd4;
+}
+
+.action-buttons,
+.action-buttons_center {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* เพิ่มเพื่อรองรับหลายปุ่มในแถว */
+    justify-content: center; /* จัดให้อยู่กลาง */
+}
+
+.action-buttons a,
+.action-buttons_center a {
+    text-decoration: none;
+    width: 230px; /* ✅ ความยาวเท่ากันทุกปุ่ม */
+    height: 45px; /* ✅ ความสูงเท่ากัน */
+    background-color: #4ec3e9;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ✅ จัดข้อความให้อยู่กลางแนวขวาง */
+    gap: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    white-space: nowrap; /* ป้องกันข้อความขึ้นบรรทัดใหม่ */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.action-buttons a:hover,
+.action-buttons_center a:hover {
+    background-color: #3ab2d6;
+}
+

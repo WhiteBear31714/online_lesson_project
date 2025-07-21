@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เว็บแบบหลายหน้าในหน้าเดียว</title>
+  <style>
+    .page {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- หน้าที่ 1 -->
+  <div id="page1" class="page active">
+    <h1>หน้าปก</h1>
+    <p>นี่คือหน้าปกของเว็บ</p>
+    <button onclick="goToPage(2)">ถัดไป</button>
+  </div>
+
+  <!-- หน้าที่ 2 -->
+  <div id="page2" class="page">
+    <h1>หน้า 2</h1>
+    <p>เนื้อหาหน้า 2</p>
+    <button onclick="goToPage(1)">ย้อนกลับ</button>
+    <button onclick="goToPage(3)">ถัดไป</button>
+  </div>
+
+  <!-- หน้าที่ 3 -->
+  <div id="page3" class="page">
+    <h1>หน้า 3</h1>
+    <p>เนื้อหาหน้า 3</p>
+    <button onclick="goToPage(2)">ย้อนกลับ</button>
+  </div>
+
+  <script>
+    function goToPage(pageNumber) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(p => p.classList.remove('active'));
+      document.getElementById('page' + pageNumber).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
