@@ -1,0 +1,5 @@
+gitupdage
+1 . status
+2 . git add .
+3 . git commit -m "ข้อความรายงานว่าทำอะไร เพิ่มอะไร"
+4  . git push -u origin main
