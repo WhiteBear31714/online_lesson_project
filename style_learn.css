@@ -19,6 +19,7 @@ body {
     right: 0;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
 .nav-links {
@@ -117,6 +118,15 @@ button {
   cursor: pointer;
 }
 
+.lesson-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
 .lesson-item:hover, .lesson-item.active {
   background: #e3f2fd;
   color: #1976d2;
@@ -125,6 +135,14 @@ button {
 
 .lesson-item.completed {
   color: #43a047;
+}
+
+.lesson-item.active {
+    background-color: #d0eaff;
+    font-weight: bold;
+}
+.lesson-item:hover {
+    background-color: #e0f0ff;
 }
 
 .content-section {
@@ -147,6 +165,9 @@ button {
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   margin-bottom: 1.5rem;
+  display: flex;
+  position: relative;
+  z-index: 1;
 }
 
 .video-container iframe {
@@ -156,6 +177,7 @@ button {
   width: 100%;
   height: 100%;
   border: none;
+  z-index: 1;
 }
 
 .Description {

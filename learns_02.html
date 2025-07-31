@@ -9,12 +9,42 @@
     <link href="style_learns.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
     <style>
-    body {
-        font-family: 'Mali', sans-serif;
-        background-color: #f2faff;
-    }
+        body {
+            font-family: 'Mali', sans-serif;
+            background-color: #f2faff;
+        }
     </style>
 </head>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const iframe = document.getElementById('lesson-video'); // ✅ ประกาศก่อนใช้
+        const activeItem = document.querySelector('.lesson-item.active a[data-video]');
+        if (activeItem) {
+            iframe.src = activeItem.getAttribute('data-video'); // ✅ ใช้ได้แล้ว
+        }
+
+        const videoLinks = document.querySelectorAll('.lesson-item a[data-video]');
+
+        videoLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // ป้องกันลิงก์เปิดหน้าใหม่
+                const videoUrl = this.getAttribute('data-video');
+                if (videoUrl) {
+                    iframe.src = videoUrl;
+
+                    // ลบ .active จากทุกบทเรียน
+                    document.querySelectorAll('.lesson-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+
+                    // เพิ่ม .active ให้บทเรียนที่เลือก
+                    this.parentElement.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+
 <body>
     <header class="navbar">
         <div class="logo">online<br><span class="sub-logo">COURSES</span></class=>
@@ -28,15 +58,39 @@
 
 <div class="layout-container">
     <aside class="sidebar-menu">
-        <ul class="lesson-list">
-            <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank"></a><li class="lesson-item completed">แบบทดสอบก่อนเรียน  <span>✔️</span></li>
-            <a href="#" target="_blank"></a><li class="lesson-item active">บทที่ 1 การค้นหาข้อมูลโดยใช้อินเทอร์เน็ต<span>05:00</span></li>
-            <a href="learns_02.html" target="_blank"></a><li class="lesson-item">บทที่ 2 การค้นหาข้อมูล <span>06:15</span></li>
-            <a href="learns_03.html" target="_blank"></a><li class="lesson-item">บทที่ 3 ความรับผิดชอบ <span>09:36</span></li>
-            <a href="#" target="_blank"></a><li class="lesson-item">แบบทดสอบหลังเรียน <span></span></li>
-            <a href="#" target="_blank"></a><li class="lesson-item">แบบประเมินความพึงพอใจ <span></span></li>
+        <li class="lesson-item completed">
+            <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank">
+                แบบทดสอบก่อนเรียน <span>✔️</span>
+            </a>
+        </li>
+        <li class="lesson-item">
+            <a href="#" data-video="https://www.youtube.com/embed/eNXPoaD_Tgc">
+                บทที่ 1 การค้นหาข้อมูลโดยใช้อินเทอร์เน็ต <span>05:00</span>
+            </a>
+        </li>
+        <li class="lesson-item active">
+            <a href="#" data-video="https://www.youtube.com/embed/IKyndzAdTTE">
+                บทที่ 2 การค้นหาข้อมูล <span>06:15</span>
+            </a>
+        </li>
+        <li class="lesson-item">
+            <a href="#" data-video="https://www.youtube.com/embed/khplMpm4ctc">
+                บทที่ 3 ความรับผิดชอบ <span>09:36</span>
+            </a>
+        </li>
+                <li class="lesson-item">
+            <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank">
+                แบบทดสอบหลังเรียน <span></span>
+            </a>
+        </li>
+        <li class="lesson-item">
+            <a href="https://forms.gle/1ct99jK3SdWXDNBQ7" target="_blank">
+                แบบประเมินความพึงพอใจ <span></span>
+            </a>
+        </li>
         </ul>
     </aside>
+
 
     <main class="content-section">
         <div class="video-title">การใช้อินเทอร์เน็ตอย่างมีประสิทธิภาพ</div>
@@ -51,8 +105,8 @@
 
         <div class="item-card">
             <div class="action-buttons">
-                <a href="#" target="_blank"></i>ย้อนหลัง</a>
-                <a href="#" target="_blank"></i>ถัดไป</a>
+                <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank"></i>แบบทดสอบก่อนเรียน</a>
+                <a href="learns_02.html" target="_blank"></i>ถัดไป</a>
             </div>
         </div>
 
