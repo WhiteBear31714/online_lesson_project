@@ -8,88 +8,87 @@
     <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
     <style>
     body {
-        
-        font-family: 'Mali', sans-serif;
-        background: linear-gradient(to right, #c2e9fb, #a1c4fd);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
+            
+            font-family: 'Mali', sans-serif;
+            background: linear-gradient(to right, #c2e9fb, #a1c4fd);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    .login-card {
-        background: #ffffff;
-        padding: 2rem;
-        border-radius: 16px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 400px;
-        text-align: center;
-    }
+        .login-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
 
-    .login-card h2 {
-        color: #4169e1;
-        margin-bottom: 1.5rem;
-    }
+        .login-card h2 {
+            color: #4169e1;
+            margin-bottom: 1.5rem;
+        }
 
-    .login-card label {
-        display: block;
-        text-align: left;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-        color: #333;
-    }
+        .login-card label {
+            display: block;
+            text-align: left;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
 
-    .login-card input,
-    .login-card select {
-        width: 100%;
-        padding: 0.75rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 12px;
-        font-size: 1rem;
-    }
+        .login-card input,
+        .login-card select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 12px;
+            font-size: 1rem;
+        }
 
-    .login-card button {
-        width: 100%;
-        padding: 0.8rem;
-        background-color: #55d1e8;
-        border: none;
-        border-radius: 25px;
-        font-size: 1rem;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+        .login-card button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #55d1e8;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-    .login-card button:hover {
-        background-color: #3bb8d3;
-    }
+        .login-card button:hover {
+            background-color: #3bb8d3;
+        }
     </style>
 </head>
 <body>
     <div class="login-card">
         <h2>เข้าสู่ระบบบทเรียน</h2>
-        <form action="main.html" method="GET">
-        <label for="student-name">ชื่อนักเรียน</label>
-        <input type="text" id="student-name" name="student-name" placeholder="กรอกชื่อนักเรียน" required>
+    <form action="main.html" method="GET">
+    <label for="student-name">ชื่อนักเรียน</label>
+    <input type="text" id="student-name" name="student-name" placeholder="กรอกชื่อนักเรียน" required>
 
-        <label for="class">ชั้นเรียน</label>
-        <select id="class" name="class" required>
-            <option value="">-- เลือกชั้นเรียน --</option>
-            <option value="ป.4/1">ป.4/1</option>
-            <option value="ป.5/1">ป.5/1</option>
-            <option value="ป.6/1">ป.6/1</option>
-        </select>
+    <label for="class">ชั้นเรียน</label>
+    <select id="class" name="class" required>
+        <option value="">-- เลือกชั้นเรียน --</option>
+        <option value="ป.4/1">ป.4/1</option>
+        <option value="ป.5/1">ป.5/1</option>
+        <option value="ป.6/1">ป.6/1</option>
+    </select>
 
-        <label for="number">เลขที่</label>
-        <input type="number" id="number" name="number" placeholder="กรอกเลขที่" required>
-        <a href="main.html">
-            <button type="submit">เข้าสู่บทเรียน</button>        
-        </a>
+    <label for="number">เลขที่</label>
+    <input type="number" id="number" name="number" placeholder="กรอกเลขที่" required>
 
-        </form>
+    <button type="submit">เข้าสู่บทเรียน</button>
+    </form>
+
     </div>
 </body>
 </html>

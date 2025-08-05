@@ -16,28 +16,35 @@
     </style>
 </head>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const iframe = document.getElementById('lesson-video'); // ✅ ประกาศก่อนใช้
-        const activeItem = document.querySelector('.lesson-item.active a[data-video]');
-        if (activeItem) {
-            iframe.src = activeItem.getAttribute('data-video'); // ✅ ใช้ได้แล้ว
+    document.addEventListener('DOMContentLoaded', () => {
+        // อ่านค่าจาก URL
+        const params = new URLSearchParams(window.location.search);
+        const studentName = params.get('student-name');
+        const className = params.get('class');
+        const number = params.get('number');
+
+        // ตั้งค่าลิงก์ย้อนกลับไป main.html พร้อมชื่อผู้ใช้
+        const backToMain = document.getElementById('back-to-main');
+        if (studentName && backToMain) {
+            const url = `main.html?student-name=${encodeURIComponent(studentName)}&class=${encodeURIComponent(className)}&number=${encodeURIComponent(number)}`;
+            backToMain.href = url;
         }
 
+        // ตั้งค่าคลิกเปลี่ยนวิดีโอ
         const videoLinks = document.querySelectorAll('.lesson-item a[data-video]');
+        const iframe = document.getElementById('lesson-video');
 
         videoLinks.forEach(link => {
             link.addEventListener('click', function (e) {
-                e.preventDefault(); // ป้องกันลิงก์เปิดหน้าใหม่
+                e.preventDefault();
                 const videoUrl = this.getAttribute('data-video');
                 if (videoUrl) {
                     iframe.src = videoUrl;
 
-                    // ลบ .active จากทุกบทเรียน
                     document.querySelectorAll('.lesson-item').forEach(item => {
                         item.classList.remove('active');
                     });
 
-                    // เพิ่ม .active ให้บทเรียนที่เลือก
                     this.parentElement.classList.add('active');
                 }
             });
@@ -46,12 +53,11 @@
 </script>
 <body>
     <header class="navbar">
-        <div class="logo">online<br><span class="sub-logo">COURSES</span></class=>
+        <div class="logo">
+            online<br><span class="sub-logo">COURSES</span>
         </div>
         <div class="nav-links">
-            <a href="main.html">
-                <button>เข้าสู่บทเรียน</button>
-            </a>
+            <a id="back-to-main" href="main.html" class="button">เข้าสู่บทเรียน</a>
         </div>
     </header>
 
@@ -66,6 +72,7 @@
             <a href="#" data-video="https://www.youtube.com/embed/eNXPoaD_Tgc">
                 บทที่ 1 การค้นหาข้อมูลโดยใช้อินเทอร์เน็ต <span>05:00</span>
             </a>
+        </li>
         <li class="lesson-item">
             <a href="#" data-video="https://www.youtube.com/embed/IKyndzAdTTE">
                 บทที่ 2 การค้นหาข้อมูล <span>06:15</span>
@@ -76,12 +83,12 @@
                 บทที่ 3 ความรับผิดชอบ <span>09:36</span>
             </a>
         </li>
-                <li class="lesson-item ">
+                <li class="lesson-item completed">
             <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank">
                 แบบทดสอบหลังเรียน <span></span>
             </a>
         </li>
-        <li class="lesson-item">
+        <li class="lesson-item completed">
             <a href="https://forms.gle/1ct99jK3SdWXDNBQ7" target="_blank">
                 แบบประเมินความพึงพอใจ <span></span>
             </a>

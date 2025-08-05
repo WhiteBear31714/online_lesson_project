@@ -64,7 +64,7 @@ button:hover {
 .video_section {
     display: flex;
     justify-content: center;
-    padding-top: 80px;
+    padding: 1rem;
 }
 
 .video_section img {
@@ -220,5 +220,40 @@ button:hover {
 .action-buttons a:hover,
 .action-buttons_center a:hover {
     background-color: #3ab2d6;
+}
+
+.course-intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+}
+.course-info {
+    flex: 1 1 42%;
+    font-size: 18px;
+}
+.course-info h1 {
+    flex: 1 1 42%;
+    font-size: 20px;
+    color: #2d6cdf;
+}
+.video-preview {
+    flex: 1 1 55%;
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4169e1;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
 }
 

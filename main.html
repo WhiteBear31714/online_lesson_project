@@ -9,14 +9,15 @@
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'); /* สำหรับไอคอน */
     </style>
 </head>
+
 <body>
 
     <!-- -- ปก -- -->
 
     <div>
         <div class="navbar">
-            <div 
-                class="logo">online<br><span class="sub-logo">COURSES</span></class=>
+            <div class="logo">
+                online<br><span class="sub-logo">COURSES</span>
             </div>
 
             <div class="nav-links">
@@ -28,15 +29,37 @@
             </div>
         </div>
 
+        <!-- เพิ่มสคริปต์นี้ก่อนปิด body -->
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const studentName = params.get('student-name');
+            if (studentName) {
+                document.getElementById('student-name-display').textContent = studentName;
+            }
+        </script>
+
         <div class="video_section">
             <img src="c:\Users\LENOVO\OneDrive\เดสก์ท็อป\โปรเจ็ค เว็ปบทเรียนออนไลน์\img\1.png" alt="รูปปก" style="width: 800px;">
         </div> 
-    </div>
 
+        <main class="container">
+        <section class="course-intro">
+            <div class="course-info">
+            <h1>การค้นหาข้อมูลโดยใช้อินเทอร์เน็ต</h1>
+            <p>ใช้อินเทอร์เน็ตในการค้นหาข้อมูลอย่างมีประสิทธิภาพ</p>
+            <p>👨‍🏫 โดย นายภูผา พละสุข </p>
+            <p>👨 By Mr. Bhupha Pasasuk</p>
+            </div>
+            <div class="video-preview">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eNXPoaD_Tgc" title="Excel for Everyone" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+        </main>
 
     <!-- -- แผนการจัดการเรียนรู้ที่ 1 -- -->
 
     <div class="container">
+
         <div class="header">
             <h1>แผนการจัดการเรียนรู้</h1>
             <p>การค้นหาข้อมูลโดยใช้อินเทอร์เน็ต</p>
@@ -156,27 +179,46 @@
             <div class="item-card">
                 <h3><i class="fas fa-book"></i>แบบทดสอบหลังเรียน</h3>
                 <div class="action-buttons_center">
-                    <a href="#" target="_blank"><i class="fas fa-file-alt"></i>แบบทดสอบหลังเรียน</a>
+                    <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank"><i class="fas fa-file-alt"></i>แบบทดสอบหลังเรียน</a>
                 </div>
             </div>
 
             <div class="item-card">
                 <h3><i class="fas fa-book"></i>แบบประเมินความพึ่งพอใจ</h3>
                 <div class="action-buttons_center">
-                    <a href="#" target="_blank"><i class="fas fa-file-alt"></i>แบบประเมินความพึงพอใจ</a>
+                    <a href="https://forms.gle/1ct99jK3SdWXDNBQ7" target="_blank"><i class="fas fa-file-alt"></i>แบบประเมินความพึงพอใจ</a>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <span id="student-name-display" style="font-weight: bold; color: #4169e1;"></span>
+
     <script>
     const params = new URLSearchParams(window.location.search);
-    const studentName = params.get('student-name');
-    if (studentName) {
-        document.getElementById('student-name-display').textContent = studentName;
-    }
-    </script>
+    const studentName = params.get('student-name') || '';
+    const className = params.get('class') || '';
+    const number = params.get('number') || '';
 
+    function addQueryStringToLinks() {
+        const lessonLinks = document.querySelectorAll('a[href^="learns_"]');
+        lessonLinks.forEach(link => {
+        const url = new URL(link.href, window.location.origin);
+        url.searchParams.set('student-name', studentName);
+        url.searchParams.set('class', className);
+        url.searchParams.set('number', number);
+        link.href = url.toString();
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        if (studentName) {
+        document.getElementById('student-name-display').textContent = studentName;
+        }
+        addQueryStringToLinks();
+    });
+    </script>
 </body>
 
 </html>

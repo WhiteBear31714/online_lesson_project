@@ -15,40 +15,16 @@
         }
     </style>
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const videoLinks = document.querySelectorAll('.lesson-item a[data-video]');
-        const iframe = document.getElementById('lesson-video');
 
-        videoLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault(); // ป้องกันลิงก์เปิดหน้าใหม่
-                const videoUrl = this.getAttribute('data-video');
-                if (videoUrl) {
-                    iframe.src = videoUrl;
-
-                    // ลบ .active จากทุกบทเรียน
-                    document.querySelectorAll('.lesson-item').forEach(item => {
-                        item.classList.remove('active');
-                    });
-
-                    // เพิ่ม .active ให้บทเรียนที่เลือก
-                    this.parentElement.classList.add('active');
-                }
-            });
-        });
-    });
-</script>
 <body>
-    <header class="navbar">
-        <div class="logo">online<br><span class="sub-logo">COURSES</span></class=>
-        </div>
-        <div class="nav-links">
-            <a href="main.html">
-                <button>เข้าสู่บทเรียน</button>
-            </a>
-        </div>
-    </header>
+<header class="navbar">
+    <div class="logo">
+        online<br><span class="sub-logo">COURSES</span>
+    </div>
+    <div class="nav-links">
+        <a id="back-to-main" href="main.html" class="button">เข้าสู่บทเรียน</a>
+    </div>
+</header>
 
 <div class="layout-container">
     <aside class="sidebar-menu">
@@ -61,6 +37,7 @@
             <a href="#" data-video="https://www.youtube.com/embed/eNXPoaD_Tgc">
                 บทที่ 1 การค้นหาข้อมูลโดยใช้อินเทอร์เน็ต <span>05:00</span>
             </a>
+        </li>
         <li class="lesson-item">
             <a href="#" data-video="https://www.youtube.com/embed/IKyndzAdTTE">
                 บทที่ 2 การค้นหาข้อมูล <span>06:15</span>
@@ -71,12 +48,12 @@
                 บทที่ 3 ความรับผิดชอบ <span>09:36</span>
             </a>
         </li>
-                <li class="lesson-item">
+                <li class="lesson-item completed">
             <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank">
                 แบบทดสอบหลังเรียน <span></span>
             </a>
         </li>
-        <li class="lesson-item">
+        <li class="lesson-item completed">
             <a href="https://forms.gle/1ct99jK3SdWXDNBQ7" target="_blank">
                 แบบประเมินความพึงพอใจ <span></span>
             </a>
@@ -104,7 +81,51 @@
         </div>
 
     </main>
-    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const studentName = params.get('student-name') || '';
+        const className = params.get('class') || '';
+        const number = params.get('number') || '';
+
+        // ปรับลิงก์ "เข้าสู่บทเรียน"
+        const backToMain = document.getElementById('back-to-main');
+        if (backToMain) {
+            const url = `main.html?student-name=${encodeURIComponent(studentName)}&class=${encodeURIComponent(className)}&number=${encodeURIComponent(number)}`;
+            backToMain.href = url;
+        }
+
+        // ปรับลิงก์ "ถัดไป"
+        const nextLesson = document.getElementById('next-lesson');
+        if (nextLesson) {
+            const nextUrl = `learns_02.html?student-name=${encodeURIComponent(studentName)}&class=${encodeURIComponent(className)}&number=${encodeURIComponent(number)}`;
+            nextLesson.href = nextUrl;
+        }
+
+        // เปลี่ยนวิดีโอตามคลิป
+        const videoLinks = document.querySelectorAll('.lesson-item a[data-video]');
+        const iframe = document.getElementById('lesson-video');
+
+        if (iframe) {
+            videoLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const videoUrl = this.getAttribute('data-video');
+                    if (videoUrl) {
+                        iframe.src = videoUrl;
+
+                        document.querySelectorAll('.lesson-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+
+                        this.parentElement.classList.add('active');
+                    }
+                });
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
