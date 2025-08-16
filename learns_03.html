@@ -62,44 +62,29 @@
     </header>
 
 <div class="layout-container">
-    <aside class="sidebar-menu">
-        <li class="lesson-item completed">
-            <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank">
-                แบบทดสอบก่อนเรียน <span>✔️</span>
-            </a>
-        </li>
-        <li class="lesson-item ">
-            <a href="#" data-video="https://www.youtube.com/embed/eNXPoaD_Tgc">
-                บทที่ 1 การค้นหาข้อมูลโดยใช้อินเทอร์เน็ต <span>05:00</span>
-            </a>
-        </li>
-        <li class="lesson-item">
-            <a href="#" data-video="https://www.youtube.com/embed/IKyndzAdTTE">
-                บทที่ 2 การค้นหาข้อมูล <span>06:15</span>
-            </a>
-        </li>
-        <li class="lesson-item active">
-            <a href="#" data-video="https://www.youtube.com/embed/khplMpm4ctc">
-                บทที่ 3 ความรับผิดชอบ <span>09:36</span>
-            </a>
-        </li>
-                <li class="lesson-item completed">
-            <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank">
-                แบบทดสอบหลังเรียน <span></span>
-            </a>
-        </li>
-        <li class="lesson-item completed">
-            <a href="https://forms.gle/1ct99jK3SdWXDNBQ7" target="_blank">
-                แบบประเมินความพึงพอใจ <span></span>
-            </a>
-        </li>
-        </ul>
-    </aside>
+<aside class="sidebar-menu">
+    <li class="lesson-item ">
+        <a href="auth.html?target=learns_01.html">บทที่ 1 การค้นหาข้อมูลโดยใช้อินเทอร์เน็ต <span>05:00</span></a>
+    </li>
+    <li class="lesson-item">
+        <a href="auth.html?target=learns_02.html">บทที่ 2 การค้นหาข้อมูล <span>06:15</span></a>
+    </li>
+    <li class="lesson-item active">
+        <a href="auth.html?target=learns_03.html">บทที่ 3 ความรับผิดชอบ <span>09:36</span></a>
+    </li>
+    <li class="lesson-item completed">
+        <a href="auth.html?type=quiz">ทำแบบทดสอบหลังเรียน</a>
+    </li>
+    <li class="lesson-item completed">
+        <a href="auth.html?type=survey">ทำแบบประเมินความพึงพอใจ</a>
+    </li>
+</aside>
+
 
 
     <main class="content-section">
         <div class="video-title">การใช้อินเทอร์เน็ตอย่างมีประสิทธิภาพ</div>
-        <div class="video-container"><iframe id="lesson-video" src="https://www.youtube.com/embed/eNXPoaD_Tgc" frameborder="0" allowfullscreen></iframe></div>
+        <div class="video-container"><iframe id="lesson-video" src="https://www.youtube.com/embed/khplMpm4ctc" frameborder="0" allowfullscreen></iframe></div>
         <div class="Description">
             <h3>อินเทอร์เน็ต</h3>
             <p>การเริ่มต้นเรียนรู้เรื่องอินเทอร์เน็ตจะใช้คำถามกระตุ้นความคิด เช่น "นักเรียนเคยใช้อินเทอร์เน็ตทำอะไรกันบ้าง?" เพื่อเชื่อมโยงประสบการณ์ของผู้เรียนเข้ากับบทเรียน
@@ -110,13 +95,42 @@
 
         <div class="item-card">
             <div class="action-buttons">
-                <a href="https://script.google.com/macros/s/AKfycbyY21u48NQTJuROhEp5BFB5FQ2l0TPjExV3o13nd1usCzRT9FhsfttN06_XFkI7Z-g0/exec" target="_blank"></i>แบบทดสอบก่อนเรียน</a>
-                <a href="learns_02.html" target="_blank"></i>ถัดไป</a>
+                <a href="learns_02.html" target="_blank"></i>บทที่ 2 </a>
+                <a href="auth.html?type=quiz">ทำแบบทดสอบหลังเรียน</a>
             </div>
         </div>
 
     </main>
     </div>
+<script src="auth.js"></script>
+<script>
+    const PASSWORD = "92051"; // ✅ เปลี่ยนรหัสได้ที่นี่
+
+    function checkPassword() {
+        const input = document.getElementById("access-code").value;
+        const errorMsg = document.getElementById("error-msg");
+        if (input === PASSWORD) {
+            sessionStorage.setItem("lessonAccess", "granted");
+            document.getElementById("login-overlay").style.display = "none";
+            document.getElementById("lesson-content").style.display = "block";
+        } else {
+            errorMsg.style.display = "block";
+        }
+    }
+
+    // ✅ ตรวจว่าผ่านแล้วหรือยัง
+    document.addEventListener("DOMContentLoaded", () => {
+        if (sessionStorage.getItem("lessonAccess") === "granted") {
+            document.getElementById("login-overlay").style.display = "none";
+            document.getElementById("lesson-content").style.display = "block";
+        }
+    });
+</script>
+
+<script>
+    window.lockedLessons = []; // ไม่มีบทไหนล็อก
+</script>
+<script src="lesson-lock.js"></script>
 
 </body>
 </html>
