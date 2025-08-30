@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const externalLinks = {
-        "quiz": { code: "65784", url: "https://script.google.com/macros/s/AKfycbwDLJxQq_Y7Lx1Db41mLlhR1AtZpor4MnYqAsGjp8pJbeM8ytnOb6z6U9AUku6Ba4Ei/exec" },
+        "quiz": { code: "65784", url: "https://script.google.com/macros/s/AKfycbzkxMZAkfJRAMAbB00o7ky-JlpVvrMAqGA0rZYQm2ANRZxMEGypnDk2RoFX-4SUkws/exec" },
         "survey": { code: "31298", url: "https://forms.gle/1ct99jK3SdWXDNBQ7" }
     };
 
