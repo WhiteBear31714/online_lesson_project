@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const externalLinks = {
-        "quiz": { code: "65784", url: "https://script.google.com/macros/s/AKfycbzkxMZAkfJRAMAbB00o7ky-JlpVvrMAqGA0rZYQm2ANRZxMEGypnDk2RoFX-4SUkws/exec" },
-        "survey": { code: "31298", url: "https://forms.gle/1ct99jK3SdWXDNBQ7" }
+        "quiz": { code: "65784", url: "https://script.google.com/macros/s/AKfycbyr91CvoaRlflY_sHxshhwxgLu7ikhCo6fwTNHgUGpBhoTBV16Q1eu7KJQtQwcje5S2/exec" },
+        "survey": { code: "31298", url: "home_test.html" }
     };
 
     const currentPage = window.location.pathname.split("/").pop();

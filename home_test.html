@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>แบบประเมินความพึงพอใจ บทเรียนออนไลน์</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Mali', sans-serif;
+            background: linear-gradient(to bottom, #fef3c7, #fde68a);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 850px;
+        }
+        h1 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: #ef4444;
+            text-shadow: 2px 2px #fef08a;
+            margin-bottom: 0.5rem;
+        }
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 2rem;
+        }
+        .card-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 25px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 90px;
+            height: 90px;
+        }
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem;
+            color: #374151;
+        }
+        .card p {
+            font-size: 1rem;
+            color: #555;
+            min-height: 45px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.9rem 1.6rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-purple {
+            background: #a855f7;
+        }
+        .btn-purple:hover {
+            background: #9333ea;
+        }
+        .btn-green {
+            background: #22c55e;
+        }
+        .btn-green:hover {
+            background: #16a34a;
+        }
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #3b82f6;
+            padding: 0.7rem 1.2rem;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+        .back-btn:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <a href="main.html" class="back-btn">🏠 กลับหน้าหลัก</a>
+    <div class="container">
+        <h1>แบบประเมินความพึงพอใจ 💡</h1>
+        <p class="subtitle">สำหรับนักเรียน ป.6 เพื่อประเมินการใช้งานบทเรียนออนไลน์</p>
+
+        <div class="card-wrapper">
+            <!-- การ์ด 1 -->
+            <div class="card">
+                <img src="https://img.icons8.com/fluency/96/book.png" alt="icon">
+                <h2>แบบประเมินความพึงพอใจ</h2>
+                <p>นักเรียนสามารถบอกความรู้สึกต่อบทเรียนออนไลน์ได้</p>
+                <a href="https://script.google.com/macros/s/AKfycbxsxukROMSc9HK35ZYixhU74HFoQRzpmiZ4xvzYqjbch4GpXG_4t3rL0wwj4LSA4Kqqew/exec" class="btn btn-purple">✏️ ทำแบบทดสอบ</a>
+            </div>
+
+            <!-- การ์ด 2 -->
+            <div class="card">
+                <img src="https://img.icons8.com/fluency/96/bar-chart.png" alt="icon">
+                <h2>ผลการประเมิน</h2>
+                <p>ดูคะแนนและผลรวมความพึงพอใจ</p>
+                <a href="report.html" class="btn btn-green">📊 ดูผลลัพธ์</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
